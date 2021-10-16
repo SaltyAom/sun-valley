@@ -1,0 +1,42 @@
+.action-icon
+    stroke-width: 1.25
+    transform: scale(.8)
+
+.-interact-scale
+    & > *
+        @apply transition-transform
+
+    &:active
+        & > *
+            transform: scale(.8)
+
+.-interact-fade
+    @apply transition-opacity
+
+    &:active
+        @apply opacity-50
+
+.-interact-bg
+    @apply transition-colors
+
+    &:hover,
+    &:focus
+        background-color: rgba(255,255,255,.75)
+
+.-active
+
+.taskbar-item
+    @apply relative
+
+    & > .popup
+        @apply absolute z-10 flex flex-col justify-end items-center bottom-14 opacity-0 transition-opacity
+        width: 144px
+        transform: translateX(-52px)
+
+        &.-active
+            @apply opacity-100
+
+        & > .app-name
+            @apply text-xs px-2 py-1 rounded
+            background-color: rgba(255,255,255,.8)
+            backdrop-filter: blur(16px)
