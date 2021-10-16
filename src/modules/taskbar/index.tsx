@@ -11,11 +11,7 @@ const Taskbar = () => {
     return (
         <nav
             id="nav"
-            className="fixed z-50 bottom-0 left-0 flex flex-row justify-center items-center gap-1 w-full h-[48px]"
-            style={{
-                backgroundColor: 'rgba(255,255,255,.8)',
-                backdropFilter: 'blur(16px)'
-            }}
+            className="fixed z-50 bottom-0 left-0 flex flex-row justify-center items-center gap-1 w-full h-[48px] vibrance"
         >
             <WindowButton />
             <TaskbarApp name="File Explorer" icon="/apps/file-explorer.png" />

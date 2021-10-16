@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback } from 'react'
 
-import styles from '../../styles.module.sass'
+import styles from '../../../styles.module.sass'
 
 import type { TaskbarItemComponent } from './types'
 
@@ -14,7 +14,7 @@ const TaskbarItem: TaskbarItemComponent = ({
     const [isPeeking, updatePeek] = useState(false)
     const timeout = useRef<number | null>(null)
 
-    const peek = () => {
+    const peek = useCallback(() => {
         if (timeout.current) clearTimeout(timeout.current)
 
         timeout.current = setTimeout(() => {
@@ -22,17 +22,21 @@ const TaskbarItem: TaskbarItemComponent = ({
 
             if (timeout.current) clearTimeout(timeout.current)
         }, 1000)
-    }
+    }, [])
 
-    const unpeek = () => {
+    const unpeek = useCallback(() => {
         updatePeek(false)
         if (timeout.current) clearTimeout(timeout.current)
-    }
+    }, [])
 
     return (
         <section className={styles['taskbar-item']}>
-            <header className={`${styles['popup']} ${isPeeking ? styles['-active'] : ''} ${popupClassName}`}>
-                <h4 className={styles['app-name']}>{name}</h4>
+            <header
+                className={`${styles['popup']} ${
+                    isPeeking ? styles['-active'] : ''
+                } ${popupClassName}`}
+            >
+                <h4 className={`${styles['app-name']} vibrance`}>{name}</h4>
             </header>
             <button
                 className={`min-w-[40px] h-[40px] ${styles['-interact-bg']} ${

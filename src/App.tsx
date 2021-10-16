@@ -1,4 +1,5 @@
 import Taskbar from './modules/taskbar'
+import Start from './modules/start'
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
                 backgroundImage: 'url(/wallpaper/win11.jpeg)'
             }}
         >
+            <Start />
             <Taskbar />
         </main>
     )
