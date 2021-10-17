@@ -8,7 +8,8 @@ const TextInput: TextInputComponent = ({
     prefix = null,
     label,
     name = label,
-    className = ''
+    className = '',
+    ...props
 }) => {
     const input = useRef<HTMLInputElement>(null)
 
@@ -25,6 +26,7 @@ const TextInput: TextInputComponent = ({
             <input
                 ref={input}
                 className="flex flex-1 h-full placeholder-gray-500 px-2 outline-none"
+                {...props}
                 name={name}
                 placeholder={label}
                 aria-label={label}

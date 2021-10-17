@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/node': ^16.11.0
   '@types/react': ^17.0.0
   '@types/react-dom': ^17.0.0
   '@vitejs/plugin-react': ^1.0.0
@@ -27,6 +28,7 @@ dependencies:
   tailwindcss: 2.2.17_96f83969316717847b3edf58a3f353f3
 
 devDependencies:
+  '@types/node': 16.11.0
   '@types/react': 17.0.30
   '@types/react-dom': 17.0.9
   '@vitejs/plugin-react': 1.0.4
@@ -354,6 +356,10 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.0
+    dev: true
+
+  /@types/node/16.11.0:
+    resolution: {integrity: sha512-8MLkBIYQMuhRBQzGN9875bYsOhPnf/0rgXGo66S2FemHkhbn9qtsz9ywV1iCG+vbjigE4WUNVvw37Dx+L0qsPg==}
     dev: true
 
   /@types/parse-json/4.0.0:

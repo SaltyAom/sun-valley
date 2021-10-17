@@ -6,10 +6,8 @@ import { Moon } from 'react-feather'
 
 import { TaskbarItem } from '../../atoms'
 
-import styles from '../../../styles.module.sass'
-
 const DateTime = () => {
-    const [time, updateTime] = useState(dayjs().format('H:m A'))
+    const [time, updateTime] = useState(dayjs().format('H:mm A'))
     const [date, updateDate] = useState(dayjs().format('D/M/YYYY'))
 
     useEffect(() => {
@@ -17,7 +15,7 @@ const DateTime = () => {
 
         setTimeout(() => {
             setInterval(() => {
-                updateTime(dayjs().format('H:m A'))
+                updateTime(dayjs().format('H:mm A'))
                 updateDate(dayjs().format('D/M/YYYY'))
             }, 1000)
         }, 60000 - time.getSeconds() * 1000 - time.getMilliseconds())

@@ -1,0 +1,17 @@
+.button
+    @apply text-gray-500 transition-colors
+
+    &:hover,
+    &:focus,
+    .-active
+        @apply text-black
+    
+.selection
+    @apply opacity-0
+    width: 0
+    height: 4px
+    transition: width .26s ease-out, opacity .12s ease-out
+
+    &.-active
+        @apply opacity-100
+        width: 16px

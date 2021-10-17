@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import type { FunctionComponent, HTMLProps } from 'react'
 
 export interface TextInputProps {
     name?: string
@@ -7,4 +7,4 @@ export interface TextInputProps {
     className?: string
 }
 
-export type TextInputComponent = FunctionComponent<TextInputProps>
+export type TextInputComponent = FunctionComponent<TextInputProps | HTMLProps<HTMLInputElement>>

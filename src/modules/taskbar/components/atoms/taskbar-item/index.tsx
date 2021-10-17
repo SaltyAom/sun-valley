@@ -17,6 +17,7 @@ const TaskbarItem: TaskbarItemComponent = ({
     const peek = useCallback(() => {
         if (timeout.current) clearTimeout(timeout.current)
 
+        // @ts-ignore
         timeout.current = setTimeout(() => {
             updatePeek(true)
 

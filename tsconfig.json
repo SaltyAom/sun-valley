@@ -14,7 +14,24 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+      "@components": ["./components/index.ts"],
+      "@components/*": ["./components/*"],
+      "@atoms": ["./components/atoms/index.ts"],
+      "@atoms/*": ["./components/atoms/*"],
+      "@molecules": ["./components/molecules/index.ts"],
+      "@molecules/*": ["./components/molecules/*"],
+      "@organisms": ["./components/organisms/index.ts"],
+      "@organisms/*": ["./components/organisms/*"],
+      "@layouts": ["./layouts/index.ts"],
+      "@layouts/*": ["./layouts/*"],
+      "@stores": ["./stores/index.ts"],
+      "@stores/*": ["./stores/*"],
+      "@modules": ["./modules/index.ts"],
+      "@modules/*": ["./modules/*"],
+    }
   },
   "include": ["./src"]
 }

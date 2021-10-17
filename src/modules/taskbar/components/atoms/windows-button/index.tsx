@@ -1,3 +1,5 @@
+import { useToggleStartMenu } from '@stores/start'
+
 import { TaskbarItem } from '..'
 
 const size = 24
@@ -10,8 +12,10 @@ const fragmentSize = {
 }
 
 const WindowIcon = () => {
+    const toggleStartMenu = useToggleStartMenu()
+
     return (
-        <TaskbarItem name="Start">
+        <TaskbarItem name="Start" onClick={toggleStartMenu}>
             <div className="relative m-auto w-[24px] h-[24px]">
                 <div
                     className="absolute top-0 left-0 rounded-tl-sm bg-blue-400"
