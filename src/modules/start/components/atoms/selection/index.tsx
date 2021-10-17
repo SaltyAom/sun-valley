@@ -11,7 +11,7 @@ const Selection: StartMenuSelectionComponent = ({
 }) => {
     return (
         <button
-            className={`relative flex flex-row justify-center capitalize px-4 pt-2 pb-3 ${
+            className={`relative flex flex-row justify-center items-center text-sm capitalize px-4 pt-2 pb-3 ${
                 styles['button']
             } ${active ? styles['-active'] : ''} ${className}`}
             {...props}

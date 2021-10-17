@@ -30,7 +30,7 @@ const StartMenu = () => {
         <AnimatePresence>
             {visibility ? (
                 <motion.section
-                    className={`fixed z-40 w-full ${styles['start-menu']}`}
+                    className={`fixed z-40 w-full px-2 ${styles['start-menu']}`}
                     style={{
                         bottom: '-640px'
                     }}
