@@ -1,4 +1,4 @@
-import { useToggleStartMenu } from '@stores/start'
+import { useToggleStartMenu, useStartMenuType } from '@stores/start'
 
 import { TaskbarItem } from '..'
 
@@ -12,10 +12,17 @@ const fragmentSize = {
 }
 
 const WindowIcon = () => {
-    const toggleStartMenu = useToggleStartMenu()
+    const [visible, toggleStartMenu] = useToggleStartMenu()
+    const [type, updateStartMenuType] = useStartMenuType()
+
+    const toggleOverviewMenu = () => {
+        if (visible && type !== 'overview') updateStartMenuType('overview')
+        else toggleStartMenu()
+    }
+
 
     return (
-        <TaskbarItem name="Start" onClick={toggleStartMenu}>
+        <TaskbarItem name="Start" onClick={toggleOverviewMenu}>
             <div className="relative m-auto w-[24px] h-[24px]">
                 <div
                     className="absolute top-0 left-0 rounded-tl-sm bg-blue-400"

@@ -39,7 +39,7 @@ const ContextBalloon: ContextBalloonComponent = ({
                 height: 0,
                 transition: {
                     ease: [0.7, 0, 0.84, 0],
-                    duration: 0.16
+                    duration: 0.2
                 }
             }}
         >

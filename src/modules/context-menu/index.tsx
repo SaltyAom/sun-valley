@@ -14,18 +14,25 @@ const ContextMenu = () => {
     }
 
     return (
-        <section className="fixed w-full h-screen" onClick={dismissContextMenu}>
-            <AnimatePresence>
-                {contextMenus.map(({ position, contexts, created }, index) => (
-                    <ContextBalloon
-                        key={`${index}-${created}`}
-                        index={index}
-                        position={position}
-                        contexts={contexts}
-                    />
-                ))}
-            </AnimatePresence>
-        </section>
+        <AnimatePresence>
+            {contextMenus.length && (
+                <section
+                    className="fixed w-full h-screen"
+                    onClick={dismissContextMenu}
+                >
+                    {contextMenus.map(
+                        ({ position, contexts, created }, index) => (
+                            <ContextBalloon
+                                key={`${index}-${created}`}
+                                index={index}
+                                position={position}
+                                contexts={contexts}
+                            />
+                        )
+                    )}
+                </section>
+            )}
+        </AnimatePresence>
     )
 }
 

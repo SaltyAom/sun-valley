@@ -5,6 +5,13 @@ export const useStartMenuVisibility = () => useAtom(startMenuVisibilityAtom)
 
 export const toggleMenuVisibilityAtom = atom(
     (get) => get(startMenuVisibilityAtom),
-    (get, set) => set(startMenuVisibilityAtom, !get(startMenuVisibilityAtom))
+    (get, set) => {
+        set(startMenuVisibilityAtom, !get(startMenuVisibilityAtom))
+    }
 )
-export const useToggleStartMenu = () => useAtom(toggleMenuVisibilityAtom)[1]
+export const useToggleStartMenu = () => useAtom(toggleMenuVisibilityAtom)
+
+export type StartMenuType = "overview" | "search"
+
+export const startMenuTypeAtom = atom<StartMenuType>("overview")
+export const useStartMenuType = () => useAtom(startMenuTypeAtom)
