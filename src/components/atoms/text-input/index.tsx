@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 import type { TextInputComponent } from './types'
 
@@ -9,6 +9,7 @@ const TextInput: TextInputComponent = ({
     label,
     name = label,
     className = '',
+    autoFocus = false,
     ...props
 }) => {
     const input = useRef<HTMLInputElement>(null)
@@ -16,6 +17,10 @@ const TextInput: TextInputComponent = ({
     const focusInput = () => {
         input.current?.focus()
     }
+
+    useEffect(() => {
+        if (autoFocus) focusInput()
+    }, [])
 
     return (
         <div

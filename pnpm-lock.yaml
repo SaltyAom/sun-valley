@@ -11,6 +11,7 @@ specifiers:
   framer-motion: ^4.1.17
   jotai: ^1.4.0
   postcss: ^8.3.9
+  preact: ^10.5.15
   react: ^17.0.0
   react-dom: ^17.0.0
   react-feather: ^2.0.9
@@ -25,6 +26,7 @@ dependencies:
   dayjs: 1.10.7
   framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
   jotai: 1.4.0_react@17.0.2
+  preact: 10.5.15
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-feather: 2.0.9_react@17.0.2
@@ -1647,6 +1649,10 @@ packages:
       nanoid: 3.1.30
       picocolors: 0.2.1
       source-map-js: 0.6.2
+
+  /preact/10.5.15:
+    resolution: {integrity: sha512-5chK29n6QcJc3m1lVrKQSQ+V7K1Gb8HeQY6FViQ5AxCAEGu3DaHffWNDkC9+miZgsLvbvU9rxbV1qinGHMHzqA==}
+    dev: false
 
   /pretty-hrtime/1.0.3:
     resolution: {integrity: sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=}

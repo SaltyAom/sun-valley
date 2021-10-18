@@ -6,7 +6,6 @@ import { TextInput } from '@components'
 
 import { useSearch } from '@modules/start/stores'
 
-
 const SearchBar = ({ className = "", disabled = false }) => {
     const [search, updateSearch] = useSearch()
 

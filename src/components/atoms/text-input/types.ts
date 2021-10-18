@@ -5,6 +5,7 @@ export interface TextInputProps {
     label: string
     prefix?: JSX.Element
     className?: string
+    autoFocus?: boolean
 }
 
 export type TextInputComponent = FunctionComponent<TextInputProps | HTMLProps<HTMLInputElement>>
