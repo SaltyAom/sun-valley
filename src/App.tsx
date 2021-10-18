@@ -132,7 +132,8 @@ function App() {
             id="sun-valley"
             className="w-full h-screen bg-center bg-cover"
             style={{
-                backgroundImage: 'url(/wallpaper/win11.jpeg)'
+                backgroundImage: 'url(/wallpaper/win11.jpeg)',
+                // backgroundImage: 'url(/wallpaper/opened.webp)'
             }}
             onContextMenu={showSelectionMenu}
         >

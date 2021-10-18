@@ -24,7 +24,7 @@ const Search = () => (
 
         <h5 className={styles['sub-title']}>Top Apps</h5>
         <section className="grid grid-cols-5 gap-2 px-8">
-            <Card name="Microsoft Edge" icon="/apps/edge.png" />
+            <Card name="Microsoft Edge" icon="/apps/edge.svg" />
             <Card name="File Explorer" icon="/apps/file-explorer.png" />
             <Card name="Windows Terminal" icon="/apps/windows-terminal.png" />
         </section>

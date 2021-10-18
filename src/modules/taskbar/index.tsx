@@ -33,7 +33,7 @@ const Taskbar = () => {
                 icon="/apps/search.svg"
             />
             <TaskbarApp name="File Explorer" icon="/apps/file-explorer.png" />
-            <TaskbarApp name="Microsoft Edge" icon="/apps/edge.png" />
+            <TaskbarApp name="Microsoft Edge" icon="/apps/edge.svg" />
             <TaskbarApp
                 name="Windows Terminal"
                 icon="/apps/windows-terminal.png"

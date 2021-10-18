@@ -1,4 +1,4 @@
-import { AnimatePresence, AnimateSharedLayout } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 
 import { useStartMenuType, useStartMenuVisibility } from '@stores/start'
 
@@ -13,8 +13,6 @@ import {
 const StartMenu = () => {
     const [visibility] = useStartMenuVisibility()
     const [type] = useStartMenuType()
-
-    console.log(visibility, type)
 
     return (
         <>
