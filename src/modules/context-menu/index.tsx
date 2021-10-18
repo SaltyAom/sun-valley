@@ -17,7 +17,7 @@ const ContextMenu = () => {
         <AnimatePresence>
             {contextMenus.length && (
                 <section
-                    className="fixed w-full h-screen"
+                    className="fixed z-[100] w-full h-screen"
                     onClick={dismissContextMenu}
                 >
                     {contextMenus.map(

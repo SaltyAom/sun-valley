@@ -23,10 +23,13 @@ const DateTime = () => {
 
     return (
         <TaskbarItem
-            name="Date Time"
+            name={dayjs().format('dddd, MMMM D YYYY')}
             interaction="fade"
             className="flex flex-row items-center"
-            popupClassName="!-translate-x-[48px] !items-end"
+            tooltipClassName="!items-end"
+            tooltipStyle={{
+                transform: 'translateX(-100px)',
+            }}
         >
             <div className="flex flex-col justify-center items-end mr-2">
                 <h6 className="text-xs">{time}</h6>

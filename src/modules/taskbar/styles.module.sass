@@ -18,19 +18,3 @@
     &:hover,
     &:focus
         background-color: rgba(255,255,255,.75)
-
-.taskbar-item
-    @apply relative
-
-    & > .popup
-        @apply absolute z-10 flex flex-col justify-end items-center opacity-0 transition-opacity
-        bottom: 3.75rem
-        width: 144px
-        transform: translateX(-52px)
-        pointer-events: none
-
-        &.-active
-            @apply opacity-100
-
-        & > .app-name
-            @apply text-xs px-2 py-1 rounded

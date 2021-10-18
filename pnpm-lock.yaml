@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@tailwindcss/aspect-ratio': ^0.3.0
   '@types/node': ^16.11.0
   '@types/react': ^17.0.0
   '@types/react-dom': ^17.0.0
@@ -20,6 +21,7 @@ specifiers:
   vite: ^2.6.4
 
 dependencies:
+  '@tailwindcss/aspect-ratio': 0.3.0_tailwindcss@2.2.17
   dayjs: 1.10.7
   framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
   jotai: 1.4.0_react@17.0.2
@@ -359,6 +361,14 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.0
     dev: true
+
+  /@tailwindcss/aspect-ratio/0.3.0_tailwindcss@2.2.17:
+    resolution: {integrity: sha512-DMgWskNJR6FNPLbQ8Xoq/PKV/9DfNKh5dvKB+SM8x7lVl4+pnxlZ3Ns4+yGmurA/ze708HrnCG1tXk85HolJmw==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 2.2.17_96f83969316717847b3edf58a3f353f3
+    dev: false
 
   /@types/node/16.11.0:
     resolution: {integrity: sha512-8MLkBIYQMuhRBQzGN9875bYsOhPnf/0rgXGo66S2FemHkhbn9qtsz9ywV1iCG+vbjigE4WUNVvw37Dx+L0qsPg==}

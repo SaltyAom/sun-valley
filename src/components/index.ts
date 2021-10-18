@@ -1,1 +1,1 @@
-export { TextInput } from './atoms'
+export { TextInput, Tooltip } from './atoms'

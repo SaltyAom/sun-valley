@@ -1,0 +1,16 @@
+.tooltip
+    @apply absolute z-10 flex flex-col justify-end items-center opacity-0
+    bottom: 3.75rem
+    width: 192px
+    pointer-events: none
+    transform: translateX(-76px)
+    transition: opacity 0.16s
+
+    &.-fluid
+        transform: translateX(-26px)
+
+    &.-active
+        @apply opacity-100
+
+    & > .tip
+        @apply text-xs px-3 py-2 rounded
