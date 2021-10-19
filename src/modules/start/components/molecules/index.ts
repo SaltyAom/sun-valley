@@ -1,3 +1,6 @@
+export { default as AllApps } from './all-apps'
 export { default as KeyboardListener } from './keyboard-listener'
+export { default as QuickOverview } from './quick-view'
+export { default as RecommendedPage } from './recommended'
 export { default as SearchBar } from './search-bar'
 export { default as SearchOptions } from './search-options'

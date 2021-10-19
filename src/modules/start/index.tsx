@@ -16,12 +16,10 @@ const StartMenu = () => {
 
     return (
         <>
-            {/* <AnimateSharedLayout> */}
             <AnimatePresence>
                 {visibility &&
                     (type === 'overview' ? <Overview /> : <Search />)}
             </AnimatePresence>
-            {/* </AnimateSharedLayout> */}
 
             <AnimatePresence>{visibility && <Resetter />}</AnimatePresence>
             {visibility && <Overlay />}
