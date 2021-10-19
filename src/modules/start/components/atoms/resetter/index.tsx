@@ -1,17 +1,19 @@
 import { useEffect } from 'react'
 
 import { useStartMenuType } from '@stores/start'
-import { useSearch } from '@modules/start/stores'
+import { useSearch, useOverviewPage } from '@modules/start/stores'
 
 import { motion } from 'framer-motion'
 
 const Resetter = () => {
     const [, updateType] = useStartMenuType()
+    const [, updatePage] = useOverviewPage()
     const [, updateSearch] = useSearch()
 
     useEffect(() => {
         return () => {
             updateType('overview')
+            updatePage('quick')
             updateSearch('')
         }
     }, [])

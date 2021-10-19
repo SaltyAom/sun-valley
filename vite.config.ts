@@ -7,14 +7,14 @@ import { defineConfig } from 'vite'
 export default defineConfig({
     plugins: [
         react({
-            // fastRefresh: false
+            fastRefresh: false
         }),
-        // prefresh()
+        prefresh()
     ],
     resolve: {
         alias: {
-            // react: 'preact/compat',
-            // 'react-dom': 'preact/compat',
+            react: 'preact/compat',
+            'react-dom': 'preact/compat',
             '@components': `${__dirname}/src/components`,
             '@atoms': `${__dirname}/src/components/atoms`,
             '@molecules': `${__dirname}/src/components/molecules`,

@@ -21,26 +21,21 @@ const KeyboardListener = () => {
             }
         )
 
-        window.addEventListener(
-            'keyup',
-            () => {
-                if (
-                    (pressing.current.length === 1 &&
-                        pressing.current.includes('MetaLeft')) ||
-                    pressing.current.includes('MetaRight')
-                ) {
-                    toggleStartMenu()
-                    dispatchContext({
-                        type: 'clear'
-                    })
-                }
-
-                pressing.current = []
-            },
-            {
-                passive: true
+        window.addEventListener('keyup', (event) => {
+            if (
+                (pressing.current.length === 1 &&
+                    pressing.current.includes('MetaLeft')) ||
+                pressing.current.includes('MetaRight')
+            ) {
+                event.preventDefault()
+                toggleStartMenu()
+                dispatchContext({
+                    type: 'clear'
+                })
             }
-        )
+
+            pressing.current = []
+        })
     }, [])
 
     return null

@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "serve -p 3000 dist"
+    "serve": "serve -p 3000 dist",
+    "start": "serve -p 3000 dist"
   },
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.3.0",
