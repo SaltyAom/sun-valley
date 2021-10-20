@@ -1,0 +1,15 @@
+.pane
+    @apply w-full p-2 rounded-lg
+    
+.date
+    @apply flex justify-center items-center w-[40px] h-[40px] text-sm text-center m-auto border border-transparent rounded-full transition-colors
+    @apply ring ring-1 ring-blue-400 
+
+    &:hover
+        background-color: rgba(0,0,0,.05)
+
+    &:focus
+        @apply border-blue-500
+
+    &.-active
+        @apply bg-blue-500 text-white

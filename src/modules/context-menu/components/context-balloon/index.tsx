@@ -1,44 +1,77 @@
-import { Fragment } from 'react'
+import { Fragment, useState, useReducer, useEffect, useRef } from 'react'
 
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
+
+import { getContextMenuHeight } from '@modules/context-menu/services'
+import { expo } from '@services/ease'
 
 import type { ContextBalloonComponent } from './types'
 
-import styles from '../../context.module.sass'
+import styles from '@modules/context-menu/context.module.sass'
 
 const ContextBalloon: ContextBalloonComponent = ({
     position,
     contexts = [],
     index,
-    className = ''
+    className = '',
+    bottomUp = false
 }) => {
-    const em = 16
-    const height =
-        // each slot height
-        contexts.flat(2).length * 32 +
-        // divider height
-        contexts.length * em * 0.25 * 2 +
-        // padding top-bottom
-        em * 0.25 * 2 +
-        // grid gap
-        contexts.length * em * .125 * 2
+    const height = getContextMenuHeight(contexts)
+
+    const [left, updateLeft] = useState(0)
+    const [isInit, init] = useReducer(() => true, false)
+    const menu = useRef<HTMLElement>(null)
+
+    const animate = useAnimation()
+
+    useEffect(() => {
+        const width = menu.current!.clientWidth
+        const previousWidth =
+            index <= 0
+                ? undefined
+                : document.getElementById(`context-${index - 1}`)!.clientWidth + width - 8
+
+        if (position.left && position.left > document.body.clientWidth - width)
+            updateLeft(position.left - (previousWidth ?? width))
+        else updateLeft(position.left ?? 0)
+
+        init()
+        animate.start({
+            height,
+            marginTop: 0,
+            transition: {
+                ease: expo.in,
+                duration: 0.48
+            }
+        })
+    }, [])
+
+    const marginTop = bottomUp ? height : 0
 
     return (
         <motion.aside
+            ref={menu}
             id={`context-${index}`}
-            className={`absolute flex flex-col gap-0.5 justify-center border border-gray-200 rounded-lg vibrance overflow-hidden ${styles.balloon} ${className}`}
-            style={{ ...position, height: 0 }}
+            className={`absolute flex flex-col gap-0.5 justify-center max-w-[290px] border border-gray-200 rounded-lg vibrance overflow-hidden ${styles.balloon} ${className}`}
+            style={{
+                ...position,
+                left,
+                height: 0,
+                marginTop,
+                visibility: !isInit ? 'hidden' : undefined
+            }}
             animate={{
                 height,
+                marginTop: 0,
                 transition: {
-                    ease: [0.16, 1, 0.3, 1],
+                    ease: expo.in,
                     duration: 0.48
                 }
             }}
             exit={{
                 height: 0,
                 transition: {
-                    ease: [0.7, 0, 0.84, 0],
+                    ease: expo.out,
                     duration: 0.2
                 }
             }}

@@ -1,5 +1,7 @@
 import { atom, useAtom } from 'jotai'
 
+import { getContextMenuHeight } from '@modules/context-menu/services'
+
 export type Position = {
     top?: number
     bottom?: number
@@ -31,6 +33,7 @@ export type ContextMenuActions =
 export interface ContextMenus {
     created: number
     position: Position
+    bottomUp?: boolean
     contexts: JSX.Element[][]
 }
 
@@ -56,7 +59,7 @@ export const contextMenuReducerAtom = atom<ContextMenus[], ContextMenuActions>(
                         clientWidth: 0
                     }
 
-                const position = {
+                let position = {
                     ...action.position,
                     top:
                         action.position?.top ??
@@ -68,12 +71,20 @@ export const contextMenuReducerAtom = atom<ContextMenus[], ContextMenuActions>(
                             : offsetLeft + clientWidth - 4)
                 }
 
+                const height = getContextMenuHeight(action.contexts)
+                const bottomUp =
+                    height + (action.position?.top ?? 0) >=
+                    document.body.clientHeight - 56
+
+                if (bottomUp) position.top = position.top! - height
+
                 set(contextMenuAtom, [
                     ...previousMenus,
                     {
                         created: Date.now(),
                         position,
-                        contexts: action.contexts
+                        contexts: action.contexts,
+                        bottomUp
                     }
                 ])
                 break

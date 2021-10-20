@@ -20,16 +20,13 @@ const ContextMenu = () => {
                     className="fixed z-[100] w-full h-screen"
                     onClick={dismissContextMenu}
                 >
-                    {contextMenus.map(
-                        ({ position, contexts, created }, index) => (
-                            <ContextBalloon
-                                key={`${index}-${created}`}
-                                index={index}
-                                position={position}
-                                contexts={contexts}
-                            />
-                        )
-                    )}
+                    {contextMenus.map(({ created, ...props }, index) => (
+                        <ContextBalloon
+                            key={`${index}-${created}`}
+                            index={index}
+                            {...props}
+                        />
+                    ))}
                 </section>
             )}
         </AnimatePresence>

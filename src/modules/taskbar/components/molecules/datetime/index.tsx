@@ -4,9 +4,12 @@ import dayjs from 'dayjs'
 
 import { Moon } from 'react-feather'
 
-import { TaskbarItem } from '../../atoms'
+import { useSidebar } from '@modules/sidebar/stores'
+import { TaskbarItem } from '@modules/taskbar/components'
 
 const DateTime = () => {
+    const [, updateSidebar] = useSidebar()
+
     const [time, updateTime] = useState(dayjs().format('H:mm A'))
     const [date, updateDate] = useState(dayjs().format('D/M/YYYY'))
 
@@ -21,14 +24,19 @@ const DateTime = () => {
         }, 60000 - time.getSeconds() * 1000 - time.getMilliseconds())
     }, [])
 
+    const openSidebar = () => {
+        updateSidebar(true)
+    }
+
     return (
         <TaskbarItem
             name={dayjs().format('dddd, MMMM D YYYY')}
+            onClick={openSidebar}
             interaction="fade"
             className="flex flex-row items-center"
             tooltipClassName="!items-end"
             tooltipStyle={{
-                transform: 'translateX(-100px)',
+                transform: 'translateX(-97px)'
             }}
         >
             <div className="flex flex-col justify-center items-end mr-2">

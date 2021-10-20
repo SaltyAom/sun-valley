@@ -31,6 +31,8 @@
       "@stores/*": ["./stores/*"],
       "@modules": ["./modules/index.ts"],
       "@modules/*": ["./modules/*"],
+      "@services": ["./services/index.ts"],
+      "@services/*": ["./services/*"]
     }
   },
   "include": ["./src"]

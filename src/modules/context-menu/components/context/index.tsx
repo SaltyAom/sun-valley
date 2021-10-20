@@ -6,7 +6,9 @@ import { ChevronRight } from 'react-feather'
 
 import type { ContextComponent } from './types'
 
-import styles from '../../context.module.sass'
+import styles from '@modules/context-menu/context.module.sass'
+
+export const height = 32
 
 const Context: ContextComponent = ({ icon, title, suffix, menu, ...props }) => {
     const [context, dispatch] = useContextMenu()
@@ -48,7 +50,7 @@ const Context: ContextComponent = ({ icon, title, suffix, menu, ...props }) => {
     return (
         <button
             ref={button}
-            className={`flex flex-row justify-between gap-16 w-auto items-center mx-1 px-3 py-1 rounded-lg ${styles.context}`}
+            className={`flex flex-row justify-between gap-16 w-auto items-center min-h-[${height}px] mx-1 px-3 py-1 rounded-lg ${styles.context}`}
             {...props}
             onMouseOver={showContext}
         >

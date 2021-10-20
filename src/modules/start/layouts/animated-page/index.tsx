@@ -1,20 +1,23 @@
 import { AnimatePresence, motion } from 'framer-motion'
 
+import { expo } from '@services/ease'
+
 import type { AnimatePageComponent } from './types'
 
 import styles from './animate-page.module.sass'
 
 const duration = 0.16
+const move = 24
 
 const animate = {
     start: {
         style: {
-            translateX: 24,
+            translateX: -move,
             opacity: 0,
             position: 'absolute'
         },
         transition: {
-            ease: [0.16, 1, 0.3, 1],
+            ease: expo.in,
             duration
         },
         animate: {
@@ -26,17 +29,17 @@ const animate = {
             }
         },
         exit: {
-            translateX: -24,
+            translateX: -move,
             opacity: 0
         }
     },
     end: {
         style: {
-            translateX: 24,
+            translateX: move,
             opacity: 0
         },
         transition: {
-            ease: [0.16, 1, 0.3, 1],
+            ease: expo.in,
             duration
         },
         animate: {
@@ -47,7 +50,7 @@ const animate = {
             }
         },
         exit: {
-            translateX: -24,
+            translateX: move,
             opacity: 0
         }
     }

@@ -5,8 +5,9 @@ import { useContextMenu } from '@stores/context-menu'
 import Taskbar from './modules/taskbar'
 import Start from './modules/start'
 import ContextMenu, { Context } from './modules/context-menu'
+import Sidebar from './modules/sidebar'
 
-function App() {
+const App = () => {
     const [, dispatchContextMenu] = useContextMenu()
 
     const showSelectionMenu: DOMAttributes<HTMLElement>['onClick'] = (
@@ -132,14 +133,16 @@ function App() {
             id="sun-valley"
             className="w-full h-screen bg-center bg-cover"
             style={{
-                backgroundImage: 'url(/wallpaper/win11.jpeg)',
-                // backgroundImage: 'url(/wallpaper/opened.webp)'
+                // backgroundImage: 'url(/wallpaper/win11.jpeg)'
+                // backgroundImage: 'url(/wallpaper/opened.webp)',
+                backgroundImage: 'url(/wallpaper/shiroko.webp)'
             }}
             onContextMenu={showSelectionMenu}
         >
             <Start />
             <Taskbar />
             <ContextMenu />
+            <Sidebar />
         </main>
     )
 }
