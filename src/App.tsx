@@ -1,18 +1,22 @@
 import type { DOMAttributes } from 'react'
 
 import { useContextMenu } from '@stores/context-menu'
+import { useApps } from '@stores/apps'
+
+import { AnimatePresence } from 'framer-motion'
 
 import { Window } from '@layouts'
 
 import Taskbar from './modules/taskbar'
 import Start from './modules/start'
-import ContextMenu, { Context } from './modules/context-menu'
+import ContextMenu from './modules/context-menu'
 import Sidebar from './modules/sidebar'
 
-import apps from '@data/apps'
+import { desktopContextMenu } from '@data/default'
 
 const App = () => {
     const [, dispatchContextMenu] = useContextMenu()
+    const [apps] = useApps()
 
     const showSelectionMenu: DOMAttributes<HTMLElement>['onClick'] = (
         event
@@ -28,107 +32,10 @@ const App = () => {
         dispatchContextMenu({
             type: 'append',
             position: {
-                top: pageY + 2,
-                left: pageX + 2
+                top: pageY + 1,
+                left: pageX + 1
             },
-            contexts: [
-                [
-                    <Context
-                        title="View"
-                        menu={[
-                            [
-                                <Context
-                                    title="Large icons"
-                                    suffix="Crtl+Shift+2"
-                                />,
-                                <Context
-                                    title="Medium icons"
-                                    suffix="Crtl+Shift+3"
-                                />,
-                                <Context
-                                    title="Small icons"
-                                    suffix="Crtl+Shift+4"
-                                />
-                            ],
-                            [
-                                <Context title="Auto arrange icons" />,
-                                <Context title="Align icons to grid" />
-                            ],
-                            [<Context title="Show desktop icons" />]
-                        ]}
-                    />,
-                    <Context
-                        title="Sort by"
-                        menu={[
-                            [
-                                <Context title="View" />,
-                                <Context title="Size" />,
-                                <Context title="Item type" />,
-                                <Context title="Data modified" />
-                            ]
-                        ]}
-                    />,
-                    <Context title="Refresh" />
-                ],
-                [
-                    <Context
-                        title="New"
-                        menu={[
-                            [
-                                <Context
-                                    icon="/apps/file-explorer.png"
-                                    title="Folder"
-                                />,
-                                <Context
-                                    icon="/apps/file-explorer.png"
-                                    title="Shortcut"
-                                />,
-                                <Context
-                                    icon="/apps/file-explorer.png"
-                                    title="Text Document"
-                                />
-                            ]
-                        ]}
-                    />
-                ],
-                [
-                    <Context title="Display settings" />,
-                    <Context title="Personalize" />
-                ],
-                [<Context title="Open in Windows Terminal" />],
-                [<Context title="Show more options" suffix="Shift+F10" />],
-                [
-                    <Context
-                        title="My"
-                        menu={[
-                            [
-                                <Context
-                                    title="custom"
-                                    menu={[
-                                        [
-                                            <Context
-                                                title="Fluent"
-                                                menu={[
-                                                    [
-                                                        <Context
-                                                            title="context"
-                                                            menu={[
-                                                                [
-                                                                    <Context title="menu" />
-                                                                ]
-                                                            ]}
-                                                        />
-                                                    ]
-                                                ]}
-                                            />
-                                        ]
-                                    ]}
-                                />
-                            ]
-                        ]}
-                    />
-                ]
-            ]
+            contexts: desktopContextMenu
         })
     }
 
@@ -138,16 +45,22 @@ const App = () => {
             className="w-full h-screen bg-center bg-cover"
             style={{
                 // backgroundImage: 'url(/wallpaper/win11.jpeg)'
-                backgroundImage: 'url(/wallpaper/opened.webp)',
+                backgroundImage: 'url(/wallpaper/opened.webp)'
                 // backgroundImage: 'url(/wallpaper/shiroko.webp)'
             }}
             onContextMenu={showSelectionMenu}
         >
+            <section className="fixed z-0 w-full h-screen">
+                <AnimatePresence>
+                    {apps.map((app) => (
+                        <Window key={app.id} app={app} />
+                    ))}
+                </AnimatePresence>
+            </section>
             <Start />
             <Taskbar />
             <ContextMenu />
             <Sidebar />
-            <Window app={apps[0]} />
         </main>
     )
 }

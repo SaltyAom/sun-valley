@@ -1,8 +1,9 @@
 import type { FunctionComponent } from "react"
-import type { App } from "@data/apps"
+import type { ActiveApp } from "@stores/apps"
 
 export interface WindowProps {
-    app: App
+    app: ActiveApp
+    className?: string
 }
 
 export type WindowComponent = FunctionComponent<WindowProps>

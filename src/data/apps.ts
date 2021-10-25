@@ -24,4 +24,10 @@ const apps = [
     }
 ]
 
-export default apps
+export const appsMap = apps
+    .map((app) => ({
+        [app.name]: app
+    }))
+    .reduce((acc, cur) => ({ ...acc, ...cur }))
+
+export default appsMap

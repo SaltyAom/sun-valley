@@ -1,3 +1,4 @@
+import appsMap from '@data/apps'
 import { useToggleStartMenu, useStartMenuType } from '@stores/start'
 
 import {
@@ -8,6 +9,8 @@ import {
     HiddenItems,
     TaskbarApp
 } from './components'
+
+console.log(appsMap)
 
 const Taskbar = () => {
     const [visible, toggleStartMenu] = useToggleStartMenu()
@@ -29,15 +32,15 @@ const Taskbar = () => {
             <WindowButton />
             <TaskbarApp
                 onClick={toggleSearchMenu}
-                name="Search"
-                icon="/apps/search.svg"
+                app={{
+                    name: 'Search',
+                    icon: '/apps/search.svg',
+                    short: 'Search'
+                }}
             />
-            <TaskbarApp name="File Explorer" icon="/apps/file-explorer.png" />
-            <TaskbarApp name="Microsoft Edge" icon="/apps/edge.svg" />
-            <TaskbarApp
-                name="Windows Terminal"
-                icon="/apps/windows-terminal.png"
-            />
+            <TaskbarApp app={appsMap['File Explorer']} />
+            <TaskbarApp app={appsMap['Microsoft Edge']} />
+            <TaskbarApp app={appsMap['Window Terminal']} />
 
             <aside className="absolute right-0 flex flex-row items-center h-inherit gap-1 px-2">
                 <HiddenItems />
