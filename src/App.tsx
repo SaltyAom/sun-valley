@@ -2,10 +2,14 @@ import type { DOMAttributes } from 'react'
 
 import { useContextMenu } from '@stores/context-menu'
 
+import { Window } from '@layouts'
+
 import Taskbar from './modules/taskbar'
 import Start from './modules/start'
 import ContextMenu, { Context } from './modules/context-menu'
 import Sidebar from './modules/sidebar'
+
+import apps from '@data/apps'
 
 const App = () => {
     const [, dispatchContextMenu] = useContextMenu()
@@ -134,8 +138,8 @@ const App = () => {
             className="w-full h-screen bg-center bg-cover"
             style={{
                 // backgroundImage: 'url(/wallpaper/win11.jpeg)'
-                // backgroundImage: 'url(/wallpaper/opened.webp)',
-                backgroundImage: 'url(/wallpaper/shiroko.webp)'
+                backgroundImage: 'url(/wallpaper/opened.webp)',
+                // backgroundImage: 'url(/wallpaper/shiroko.webp)'
             }}
             onContextMenu={showSelectionMenu}
         >
@@ -143,6 +147,7 @@ const App = () => {
             <Taskbar />
             <ContextMenu />
             <Sidebar />
+            <Window app={apps[0]} />
         </main>
     )
 }

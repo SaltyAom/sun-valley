@@ -32,7 +32,9 @@
       "@modules": ["./modules/index.ts"],
       "@modules/*": ["./modules/*"],
       "@services": ["./services/index.ts"],
-      "@services/*": ["./services/*"]
+      "@services/*": ["./services/*"],
+      "@data": ["./data/index.ts"],
+      "@data/*": ["./data/*"]
     }
   },
   "include": ["./src"]

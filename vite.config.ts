@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react'
-import prefresh from '@prefresh/vite'
+// import prefresh from '@prefresh/vite'
 
 import { defineConfig } from 'vite'
 
@@ -20,7 +20,8 @@ export default defineConfig({
             '@layouts': `${__dirname}/src/layouts`,
             '@stores': `${__dirname}/src/stores`,
             '@modules': `${__dirname}/src/modules`,
-            '@services': `${__dirname}/src/services`
+            '@services': `${__dirname}/src/services`,
+            '@data': `${__dirname}/src/data`
         }
     }
 })
