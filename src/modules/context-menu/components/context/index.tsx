@@ -50,7 +50,7 @@ const Context: ContextComponent = ({ icon, title, suffix, menu, ...props }) => {
     return (
         <button
             ref={button}
-            className={`flex flex-row justify-between gap-16 w-auto items-center min-h-[${height}px] mx-1 px-3 py-1 rounded-lg ${styles.context}`}
+            className={`flex flex-row justify-between gap-16 w-auto items-center min-h-[32px] mx-1 px-3 py-1 rounded-lg ${styles.context}`}
             {...props}
             onMouseOver={showContext}
         >

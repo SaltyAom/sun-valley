@@ -50,17 +50,18 @@
       console.log("I have a long way to go with this project.")
       console.log("@see https://github.com/saltyAom/sun-valley")
 
-      const resize = () => {
+      const handleViewport = () => {
         const viewport = document.getElementById("viewport")
 
-        if (screen.width <= 1366) {
+        if (screen.width <= 1366)
           viewport.setAttribute("content", "width=1366, shrink-to-fit=yes")
-        } else {
+        else
           viewport.setAttribute("content", "shrink-to-fit=yes")
-        }
       }
       
-      window.addEventListener("")
+      window.addEventListener("resize", handleViewport, {
+        passive: true
+      })
     </script>
   </head>
   <body>
