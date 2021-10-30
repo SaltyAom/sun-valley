@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "prebuild": "[[ $CI = true ]] && npx pnpm install -r --store=node_modules/.pnpm-store || echo skiping pnpm install",
+    "prebuild": "[[ $CI = true ]] && npx pnpm@3 install -r --store=node_modules/.pnpm-store || echo skiping pnpm install",
     "build": "tsc && vite build",
     "serve": "serve -p 3000 dist",
     "start": "serve -p 3000 dist"
@@ -27,7 +27,7 @@
     "@types/react-dom": "^17.0.0",
     "@vitejs/plugin-react": "^1.0.0",
     "autoprefixer": "^10.3.7",
-    "pnpm": "^6.19.1",
+    "pnpm": "3",
     "postcss": "^8.3.9",
     "sass": "^1.43.2",
     "serve": "^12.0.1",
