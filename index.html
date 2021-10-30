@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg">
+    <meta id="viewport" name="viewport" content="shrink-to-fit=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Sun Valley</title>
+
+    <!-- Search Engine -->
+    <meta name="title" content="Sun Valley">
+    <meta name="description" content="Experience Windows 11 UI clone on web">
+    <meta name="author" content="SaltyAom">
+    <link rel="icon" href="Web's icon">
+
+    <!-- Open Graph -->
+    <link rel="canonical" href="https://sun-valley.netlify.app">
+    <meta property="og:title" content="Sun Valley">
+    <meta property="og:description" content="Experience Windows 11 UI clone on web">
+    <meta property='article:author' content="SaltyAom">
+    <meta property='og:site_name' content="Sun Valley">
+    <meta property="og:image" content="https://sun-valley.netlify.app/og/og.jpg">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sun Valley">
+    <meta name="twitter:description" content="Experience Windows 11 UI clone on web">
+    <meta name="twitter:site" content="@saltyAom">
+    <meta name="twitter:image" content="https://sun-valley.netlify.app/og/og.jpg">
+    <meta name="twitter:creator" content="@saltyAom">
+
+    <!-- Web App -->
+    <!-- <link rel="manifest" href="assets/app/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes"> -->
+    <meta name="theme-color" content="#fff">
+
+    <!-- MS Web App -->
+    <meta name="application-name" content="Sun Valley">
+    <meta name="mssmarttagspreventparsing" content="true">
+    <meta name="msapplication-window" content="width=960;height=640"> 
+    <meta name="msapplication-navbutton-color" content="#fff">
+    <meta name="msapplication-tooltip" content="Experience Windows 11 UI Clone on web">
+
+    <script>
+      console.log("Underactive development")
+      console.log("I have a long way to go with this project.")
+      console.log("@see https://github.com/saltyAom/sun-valley")
+
+      const resize = () => {
+        const viewport = document.getElementById("viewport")
+
+        if (screen.width <= 1366) {
+          viewport.setAttribute("content", "width=1366, shrink-to-fit=yes")
+        } else {
+          viewport.setAttribute("content", "shrink-to-fit=yes")
+        }
+      }
+      
+      window.addEventListener("")
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -95,7 +95,6 @@ const useManager = (
             return updateMinimize(false)
         }
 
-        console.log('min')
         animation.start({
             opacity: 0,
             scale: 0.75,

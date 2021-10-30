@@ -1,4 +1,10 @@
-import { useEffect, useReducer, useRef, useState } from 'react'
+import {
+    TouchEventHandler,
+    useEffect,
+    useReducer,
+    useRef,
+    useState
+} from 'react'
 import type { MouseEventHandler, Reducer } from 'react'
 
 const minSize: [number, number] = [360, 240]
@@ -44,6 +50,8 @@ const useWindow = () => {
         [0, 0]
     )
 
+    const previousDrag = useRef<number[] | null>(null)
+
     useEffect(() => {
         updatePosition([
             (document.body.offsetWidth - initSize[0]) / 2,
@@ -56,7 +64,7 @@ const useWindow = () => {
     const drag = useRef(false)
     const resize = useRef(Resize.none)
 
-    const startDrag: MouseEventHandler = () => {
+    const startDrag = () => {
         drag.current = true
         updateAction(true)
     }
@@ -65,6 +73,28 @@ const useWindow = () => {
         resize.current = action
         updateAction(true)
     }
+
+    const convertTouchToMove =
+        (callback: (event: { movementX: number; movementY: number }) => void) =>
+        (event: TouchEvent) => {
+            const { pageX, pageY } = event.changedTouches[0]
+
+            if (previousDrag.current) {
+                const [previousX, previousY] = previousDrag.current
+                const [movementX, movementY] = [
+                    pageX - previousX,
+                    pageY - previousY
+                ]
+
+                // ! Unsafe: We only extract movementX and Y here, so no worry
+                callback({
+                    movementX,
+                    movementY
+                })
+            }
+
+            previousDrag.current = [pageX, pageY]
+        }
 
     useEffect(() => {
         const handleMove = (event: MouseEvent) => {
@@ -124,6 +154,16 @@ const useWindow = () => {
             passive: true
         })
 
+        const handleTouch = convertTouchToMove((movement) => {
+            // ! Unsafe: We only extract movementX and Y here, so no worry
+            handleMove(movement as any)
+            handleResize(movement as any)
+        })
+
+        document.addEventListener('touchmove', handleTouch, {
+            passive: true
+        })
+
         document.addEventListener('mousemove', handleResize, {
             passive: true
         })
@@ -131,10 +171,12 @@ const useWindow = () => {
         const stopHandler = () => {
             drag.current = false
             resize.current = Resize.none
-            updateAction(false)
+            previousDrag.current = null
         }
 
-        ;['mouseup', 'mouseleave'].forEach((event) => {
+        const stopEvents = ['mouseup', 'mouseleave', 'touchcanel', 'touchend']
+
+        stopEvents.forEach((event) => {
             document.addEventListener(event, stopHandler, {
                 passive: true
             })
@@ -143,7 +185,9 @@ const useWindow = () => {
         return () => {
             document.removeEventListener('mousemove', handleMove)
             document.removeEventListener('mousemove', handleResize)
-            ;['mouseup', 'mouseleave'].forEach((event) => {
+            document.removeEventListener('touchmove', handleTouch)
+
+            stopEvents.forEach((event) => {
                 document.removeEventListener(event, stopHandler)
             })
         }

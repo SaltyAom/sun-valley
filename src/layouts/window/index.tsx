@@ -16,27 +16,24 @@ const Window: WindowComponent = ({
     children
 }) => {
     const { position, size, actioning, startDrag, startResize } = useWindow()
-    const {
-        minimize,
-        maximize,
-        close,
-        prioritize,
-        isMaximize,
-        animation
-    } = useManager(app, {
-        position,
-        size
-    })
+    const { minimize, maximize, close, prioritize, isMaximize, animation } =
+        useManager(app, {
+            position,
+            size
+        })
 
     return (
         <motion.article
-            className={`fixed z-0 flex flex-col items-start border border-gray-300 overflow-hidden ${style.window} ${className}`}
+            className={`fixed z-0 flex flex-col items-start border border-gray-300 ${style.window} ${className}`}
             onMouseDown={prioritize}
             initial={{
                 opacity: 0,
                 scale: 0.75,
                 borderWidth: 1,
                 borderRadius: '0.5em'
+            }}
+            transition={{
+                duration: 0
             }}
             animate={animation}
             exit={{
@@ -51,23 +48,24 @@ const Window: WindowComponent = ({
                 <style
                     dangerouslySetInnerHTML={{
                         __html: `
-                    * {
-                        user-select: none;
-                        -webkit-user-select: none;
-                    }
-                `
+                        * {
+                            user-select: none;
+                            -webkit-user-select: none;
+                        }
+                    `
                     }}
                 />
             )}
 
             <ResizeHandler startResize={startResize} />
             <header
-                className="flex flex-row justify-between w-full h-[36px] cursor-default"
+                className="flex flex-row justify-between w-full h-[36px] cursor-default overflow-hidden rounded-t-lg"
                 onMouseDown={startDrag}
+                onTouchStart={startDrag}
             >
                 <section className="flex flex-row items-center flex-1">
                     <img
-                        className="w-[16px] h-[16px] object-contain mx-2"
+                        className={`w-[16px] h-[16px] object-contain mx-2 ${style.icon}`}
                         src={icon}
                         alt={name}
                     />

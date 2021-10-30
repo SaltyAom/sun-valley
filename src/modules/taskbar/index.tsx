@@ -10,8 +10,6 @@ import {
     TaskbarApp
 } from './components'
 
-console.log(appsMap)
-
 const Taskbar = () => {
     const [visible, toggleStartMenu] = useToggleStartMenu()
     const [type, updateStartMenuType] = useStartMenuType()

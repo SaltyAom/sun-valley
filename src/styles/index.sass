@@ -1,9 +1,6 @@
 @use 'fonts'
 
-@tailwind base
-@tailwind layouts
-@tailwind utilities
-
-html, body
+html, body, #root
+    @apply fixed w-full h-screen overflow-hidden
     font-family: 'Segoe UI Variable'
-    overflow: hidden
+    overscroll-behavior: contain

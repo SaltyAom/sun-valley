@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.h-screen {
+    height: 100vh;
+    height: -webkit-fill-available;
+}
