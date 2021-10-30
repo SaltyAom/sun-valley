@@ -1,0 +1,449 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "sun-valley",
+      "version": "0.0.0",
+      "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "serve": "serve -p 3000 dist",
+        "start": "serve -p 3000 dist"
+      },
+      "dependencies": {
+        "@tailwindcss/aspect-ratio": "^0.3.0",
+        "dayjs": "^1.10.7",
+        "framer-motion": "^4.1.17",
+        "jotai": "^1.4.0",
+        "nanoid": "^3.1.30",
+        "preact": "^10.5.15",
+        "react": "^17.0.0",
+        "react-dom": "^17.0.0",
+        "react-feather": "^2.0.9",
+        "tailwindcss": "^2.2.17"
+      },
+      "devDependencies": {
+        "@prefresh/vite": "^2.2.3",
+        "@types/node": "^16.11.0",
+        "@types/react": "^17.0.0",
+        "@types/react-dom": "^17.0.0",
+        "@vitejs/plugin-react": "^1.0.0",
+        "autoprefixer": "^10.3.7",
+        "postcss": "^8.3.9",
+        "sass": "^1.43.2",
+        "serve": "^12.0.1",
+        "typescript": "^4.3.2",
+        "vite": "^2.6.4"
+      }
+    },
+    "prefix": "/Users/aomkhunpanitchot/Documents/web/sun-valley"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": true,
+    "storeDir": "/Users/aomkhunpanitchot/.pnpm-store/v3",
+    "virtualStoreDir": "/Users/aomkhunpanitchot/Documents/web/sun-valley/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "stage": "resolution_started"
+  },
+  "4 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@prefresh/vite/2.2.3",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@prefresh/vite",
+      "rawSpec": "^2.2.3"
+    }
+  },
+  "5 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/react/17.0.30",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/react",
+      "rawSpec": "^17.0.0"
+    }
+  },
+  "6 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/react-dom/17.0.9",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/react-dom",
+      "rawSpec": "^17.0.0"
+    }
+  },
+  "7 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@vitejs/plugin-react/1.0.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@vitejs/plugin-react",
+      "rawSpec": "^1.0.0"
+    }
+  },
+  "8 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/autoprefixer/10.3.7",
+    "wanted": {
+      "dependentId": ".",
+      "name": "autoprefixer",
+      "rawSpec": "^10.3.7"
+    }
+  },
+  "9 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/node/16.11.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/node",
+      "rawSpec": "^16.11.0"
+    }
+  },
+  "10 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/sass/1.43.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "sass",
+      "rawSpec": "^1.43.2"
+    }
+  },
+  "11 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/serve/12.0.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "serve",
+      "rawSpec": "^12.0.1"
+    }
+  },
+  "12 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/typescript/4.4.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "typescript",
+      "rawSpec": "^4.3.2"
+    }
+  },
+  "13 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@tailwindcss/aspect-ratio/0.3.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@tailwindcss/aspect-ratio",
+      "rawSpec": "^0.3.0"
+    }
+  },
+  "14 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/dayjs/1.10.7",
+    "wanted": {
+      "dependentId": ".",
+      "name": "dayjs",
+      "rawSpec": "^1.10.7"
+    }
+  },
+  "15 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/framer-motion/4.1.17",
+    "wanted": {
+      "dependentId": ".",
+      "name": "framer-motion",
+      "rawSpec": "^4.1.17"
+    }
+  },
+  "16 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/vite/2.6.7",
+    "wanted": {
+      "dependentId": ".",
+      "name": "vite",
+      "rawSpec": "^2.6.4"
+    }
+  },
+  "17 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/jotai/1.4.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "jotai",
+      "rawSpec": "^1.4.0"
+    }
+  },
+  "18 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/nanoid/3.1.30",
+    "wanted": {
+      "dependentId": ".",
+      "name": "nanoid",
+      "rawSpec": "^3.1.30"
+    }
+  },
+  "19 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/preact/10.5.15",
+    "wanted": {
+      "dependentId": ".",
+      "name": "preact",
+      "rawSpec": "^10.5.15"
+    }
+  },
+  "20 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/react/17.0.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react",
+      "rawSpec": "^17.0.0"
+    }
+  },
+  "21 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/react-dom/17.0.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react-dom",
+      "rawSpec": "^17.0.0"
+    }
+  },
+  "22 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/react-feather/2.0.9",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react-feather",
+      "rawSpec": "^2.0.9"
+    }
+  },
+  "23 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/postcss/8.3.9",
+    "wanted": {
+      "dependentId": ".",
+      "name": "postcss",
+      "rawSpec": "^8.3.9"
+    }
+  },
+  "24 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tailwindcss/2.2.17",
+    "wanted": {
+      "dependentId": ".",
+      "name": "tailwindcss",
+      "rawSpec": "^2.2.17"
+    }
+  },
+  "25 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@prefresh/vite/2.2.3",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "26 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@prefresh/vite/2.2.3",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "27 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react/17.0.30",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "28 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react/17.0.30",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "29 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react-dom/17.0.9",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "30 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react-dom/17.0.9",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "31 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@vitejs/plugin-react/1.0.4",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "32 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@vitejs/plugin-react/1.0.4",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "33 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/node/16.11.0",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "34 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/node/16.11.0",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "35 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/autoprefixer/10.3.7",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "36 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/autoprefixer/10.3.7",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "37 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/sass/1.43.2",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "38 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/sass/1.43.2",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "39 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/serve/12.0.1",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "40 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/serve/12.0.1",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "41 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@tailwindcss/aspect-ratio/0.3.0",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "42 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@tailwindcss/aspect-ratio/0.3.0",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "43 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/dayjs/1.10.7",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "44 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/dayjs/1.10.7",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "45 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/framer-motion/4.1.17",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "46 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/framer-motion/4.1.17",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "47 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/typescript/4.4.4",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "48 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/typescript/4.4.4",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "49 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/jotai/1.4.0",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "50 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/jotai/1.4.0",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "51 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vite/2.6.7",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "52 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vite/2.6.7",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "53 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/nanoid/3.1.30",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "54 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/nanoid/3.1.30",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "55 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react/17.0.2",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "56 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react/17.0.2",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "57 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-dom/17.0.2",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "58 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-dom/17.0.2",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "59 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/preact/10.5.15",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "60 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/preact/10.5.15",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "61 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-feather/2.0.9",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "62 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-feather/2.0.9",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "63 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/postcss/8.3.9",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "64 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/postcss/8.3.9",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "65 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tailwindcss/2.2.17",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "resolved"
+  },
+  "66 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tailwindcss/2.2.17",
+    "requester": "/Users/aomkhunpanitchot/Documents/web/sun-valley",
+    "status": "found_in_store"
+  },
+  "67 error pnpm": {
+    "code": "ERR_PNPM_FETCH_404",
+    "hint": "blur-up is not in the npm registry, or you have no permission to fetch it.\n\nAn authorization header was used: Bearer 8549[hidden]",
+    "request": {
+      "authHeaderValue": "Bearer 8549835a-118b-4453-986f-ddaf400137fc",
+      "url": "https://registry.npmjs.org/blur-up"
+    },
+    "response": {
+      "size": 0
+    },
+    "pkgName": "blur-up",
+    "pkgsStack": [],
+    "err": {
+      "name": "pnpm",
+      "message": "GET https://registry.npmjs.org/blur-up: Not Found - 404",
+      "code": "ERR_PNPM_FETCH_404",
+      "stack": "pnpm: GET https://registry.npmjs.org/blur-up: Not Found - 404\n    at RetryOperation._fn (/Users/aomkhunpanitchot/pnpm-global/5/node_modules/.pnpm/pnpm@6.19.1/node_modules/pnpm/dist/pnpm.cjs:84852:18)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+    }
+  }
+}
