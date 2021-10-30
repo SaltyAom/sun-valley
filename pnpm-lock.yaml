@@ -12,7 +12,6 @@ specifiers:
   framer-motion: ^4.1.17
   jotai: ^1.4.0
   nanoid: ^3.1.30
-  pnpm: '3'
   postcss: ^8.3.9
   preact: ^10.5.15
   react: ^17.0.0
@@ -43,7 +42,6 @@ devDependencies:
   '@types/react-dom': 17.0.9
   '@vitejs/plugin-react': 1.0.4
   autoprefixer: 10.3.7_postcss@8.3.9
-  pnpm: 3.8.1
   postcss: 8.3.9
   sass: 1.43.2
   serve: 12.0.1
@@ -1624,12 +1622,6 @@ packages:
   /picomatch/2.3.0:
     resolution: {integrity: sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==}
     engines: {node: '>=8.6'}
-
-  /pnpm/3.8.1:
-    resolution: {integrity: sha512-uINy/U+TNvUHInG1l0/NrgDosUtafn9BrHjP5+v+ojpw+zb/lgXjkQmMHB4461LKezlNoBb7+0JOrNnm5JhZFg==}
-    engines: {node: '>=8.15'}
-    hasBin: true
-    dev: true
 
   /popmotion/9.3.6:
     resolution: {integrity: sha512-ZTbXiu6zIggXzIliMi8LGxXBF5ST+wkpXGEjeTUDUOCdSQ356hij/xjeUdv0F8zCQNeqB1+PR5/BB+gC+QLAPw==}
