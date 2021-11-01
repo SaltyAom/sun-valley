@@ -25,19 +25,19 @@ const WindowIcon = () => {
         <TaskbarItem name="Start" onClick={toggleOverviewMenu}>
             <div className="relative m-auto w-[24px] h-[24px]">
                 <div
-                    className="absolute top-0 left-0 rounded-tl-sm bg-blue-400"
+                    className="absolute top-0 left-0 rounded-tl-sm bg-sky-400"
                     style={fragmentSize}
                 />
                 <div
-                    className="absolute top-0 right-0 rounded-tr-sm bg-blue-500"
+                    className="absolute top-0 right-0 rounded-tr-sm bg-sky-500"
                     style={fragmentSize}
                 />
                 <div
-                    className="absolute bottom-0 left-0 rounded-bl-sm bg-blue-500"
+                    className="absolute bottom-0 left-0 rounded-bl-sm bg-blue-400"
                     style={fragmentSize}
                 />
                 <div
-                    className="absolute bottom-0 right-0 rounded-br-sm bg-blue-600"
+                    className="absolute bottom-0 right-0 rounded-br-sm bg-sky-600"
                     style={fragmentSize}
                 />
             </div>

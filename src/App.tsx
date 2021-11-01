@@ -57,6 +57,7 @@ const App = () => {
                     ))}
                 </AnimatePresence>
             </section>
+
             <Start />
             <Taskbar />
             <ContextMenu />

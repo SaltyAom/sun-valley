@@ -34,7 +34,9 @@
       "@services": ["./services/index.ts"],
       "@services/*": ["./services/*"],
       "@data": ["./data/index.ts"],
-      "@data/*": ["./data/*"]
+      "@data/*": ["./data/*"],
+      "@apps": ["./apps/index.ts"],
+      "@apps/*": ["./apps/*"],
     }
   },
   "include": ["./src"]

@@ -1,7 +1,12 @@
+import { lazy } from 'react'
+import type { LazyExoticComponent } from "react"
+
 export interface App {
     name: string
     icon: string
     short: string
+    app?: LazyExoticComponent<any>
+    className?: string
 }
 
 export type Apps = App[]
@@ -15,7 +20,9 @@ const apps = [
     {
         name: 'File Explorer',
         icon: '/apps/file-explorer.png',
-        short: 'Explorer'
+        short: 'Explorer',
+        app: lazy(() => import("@apps/file-explorer")),
+        className: 'bg-opacity-75'
     },
     {
         name: 'Window Terminal',

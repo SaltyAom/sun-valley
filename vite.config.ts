@@ -11,8 +11,8 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            // react: 'preact/compat',
-            // 'react-dom': 'preact/compat',
+            react: 'preact/compat',
+            'react-dom': 'preact/compat',
             '@components': `${__dirname}/src/components`,
             '@atoms': `${__dirname}/src/components/atoms`,
             '@molecules': `${__dirname}/src/components/molecules`,
@@ -21,7 +21,8 @@ export default defineConfig({
             '@stores': `${__dirname}/src/stores`,
             '@modules': `${__dirname}/src/modules`,
             '@services': `${__dirname}/src/services`,
-            '@data': `${__dirname}/src/data`
+            '@data': `${__dirname}/src/data`,
+            '@apps': `${__dirname}/src/apps`
         }
     }
 })

@@ -1,3 +1,5 @@
+import { Suspense } from 'react'
+
 import { motion } from 'framer-motion'
 
 import { Minimize2, Minus, Square, X } from 'react-feather'
@@ -11,9 +13,7 @@ import style from './window.module.sass'
 
 const Window: WindowComponent = ({
     app,
-    app: { name, icon },
-    className = 'bg-white',
-    children
+    app: { name, icon, app: Applet = null, className = '' },
 }) => {
     const { position, size, actioning, startDrag, startResize } = useWindow()
     const { minimize, maximize, close, prioritize, isMaximize, animation } =
@@ -24,7 +24,7 @@ const Window: WindowComponent = ({
 
     return (
         <motion.article
-            className={`fixed z-0 flex flex-col items-start border border-gray-300 ${style.window} ${className}`}
+            className={`fixed z-0 flex flex-col items-start bg-white border border-gray-300 vibrance ${style.window} ${className}`}
             onMouseDown={prioritize}
             initial={{
                 opacity: 0,
@@ -105,8 +105,12 @@ const Window: WindowComponent = ({
                     </button>
                 </section>
             </header>
-            <main className="flex flex-col flex-1 w-full overflow-auto">
-                {children}
+            <main className="flex flex-col flex-1 w-full overflow-auto rounded-b-lg">
+                {Applet && (
+                    <Suspense fallback={<div />}>
+                        <Applet />
+                    </Suspense>
+                )}
             </main>
         </motion.article>
     )
