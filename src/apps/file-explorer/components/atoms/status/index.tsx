@@ -1,4 +1,4 @@
-import { Square } from 'react-feather'
+import { AlignJustify, Square } from 'react-feather'
 
 const Status = () => {
     return (
@@ -11,7 +11,7 @@ const Status = () => {
             </section>
             <section>
                 <button className="w-[18px] h-[18px]">
-                    <Square className="w-[14px] h-[14px]" />
+                    <AlignJustify className="w-[14px] h-[14px]" />
                 </button>
                 <button className="w-[18px] h-[18px]">
                     <Square className="w-[14px] h-[14px]" />

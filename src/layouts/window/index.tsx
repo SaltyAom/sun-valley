@@ -22,14 +22,18 @@ const Window: WindowComponent = ({
             size
         })
 
+    const handleStartDrag = () => {
+        prioritize()
+        startDrag()
+    }
+
     return (
         <motion.article
-            className={`fixed z-0 flex flex-col items-start bg-white border border-gray-300 vibrance ${style.window} ${className}`}
+            className={`fixed z-0 flex flex-col items-start bg-white vibrance ${style.window} ${className}`}
             onMouseDown={prioritize}
             initial={{
                 opacity: 0,
                 scale: 0.75,
-                borderWidth: 1,
                 borderRadius: '0.5em'
             }}
             transition={{
@@ -38,9 +42,9 @@ const Window: WindowComponent = ({
             animate={animation}
             exit={{
                 opacity: 0,
-                scale: 0.75,
+                scale: 0.85,
                 transition: {
-                    duration: 0.16
+                    duration: 0.12
                 }
             }}
         >
@@ -60,8 +64,8 @@ const Window: WindowComponent = ({
             <ResizeHandler startResize={startResize} />
             <header
                 className="flex flex-row justify-between w-full h-[36px] cursor-default overflow-hidden rounded-t-lg"
-                onMouseDown={startDrag}
-                onTouchStart={startDrag}
+                onMouseDown={handleStartDrag}
+                onTouchStart={handleStartDrag}
             >
                 <section className="flex flex-row items-center flex-1">
                     <img
@@ -73,7 +77,7 @@ const Window: WindowComponent = ({
                 </section>
                 <section className="flex flex-row h-[32px] text-gray-700">
                     <button
-                        className="px-4 h-auto hover:bg-gray-200 focus:bg-gray-200 transition-colors rounded-none"
+                        className="px-4 h-auto hover:bg-gray-600 hover:bg-opacity-10 focus:bg-gray-600 focus:bg-opacity-10 transition-colors rounded-none"
                         onClick={minimize}
                     >
                         <Minus
@@ -82,7 +86,7 @@ const Window: WindowComponent = ({
                         />
                     </button>
                     <button
-                        className="px-4 h-auto hover:bg-gray-200 focus:bg-gray-200 transition-colors rounded-none"
+                        className="px-4 h-auto hover:bg-gray-600 hover:bg-opacity-10 focus:bg-gray-600 focus:bg-opacity-10 transition-colors rounded-none"
                         onClick={maximize}
                     >
                         {isMaximize ? (
