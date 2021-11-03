@@ -66,6 +66,7 @@ const Window: WindowComponent = ({
                 className="flex flex-row justify-between w-full h-[36px] cursor-default overflow-hidden rounded-t-lg"
                 onMouseDown={handleStartDrag}
                 onTouchStart={handleStartDrag}
+                onDoubleClick={maximize}
             >
                 <section className="flex flex-row items-center flex-1">
                     <img

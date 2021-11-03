@@ -47,7 +47,32 @@ export const desktopContextMenu = [
     ],
     [<Context title="Display settings" />, <Context title="Personalize" />],
     [<Context title="Open in Windows Terminal" />],
-    [<Context title="Show more options" suffix="Shift+F10" />],
+    [
+        <Context
+            title="Toggle Fullscreen"
+            suffix="F11"
+            onClick={() => {
+                if (
+                    document.fullscreenElement ||
+                    // @ts-ignore
+                    document.webkitFullscreenElement
+                )
+                    if (document.exitFullscreen) document.exitFullscreen()
+                    // @ts-ignore
+                    else if (document.webkitCancelFullScreen)
+                        // @ts-ignore
+                        document.webkitCancelFullScreen()
+
+                const { body } = document
+
+                if (body.requestFullscreen) body.requestFullscreen()
+                // @ts-ignore
+                else if (body.webkitRequestFullscreen)
+                    // @ts-ignore
+                    body.webkitRequestFullscreen()
+            }}
+        />
+    ],
     [
         <Context
             title="My"
