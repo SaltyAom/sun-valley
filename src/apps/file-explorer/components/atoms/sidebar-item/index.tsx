@@ -20,16 +20,19 @@ const SidebarItem: SideBarItemComponent = ({
         >
             {chevron && (
                 <ChevronRight
-                    className={style['sidebar-icon']}
-                    style={{
-                        transform: chevronDown ? 'rotate(90deg)' : ''
-                    }}
+                    className={`${style['sidebar-icon']} ${
+                        chevronDown ? style['chevron-down'] : ''
+                    }`}
                 />
             )}
             {icon && <img src={icon} className={style['sidebar-icon']} />}
             <h6 className="text-gray-600">{title}</h6>
             {pinned && (
-                <img src="/icons/pin.png" alt="Pin" className={`w-[14px] h-[14px] ml-auto ${style.pin}`} />
+                <img
+                    src="/icons/pin.png"
+                    alt="Pin"
+                    className={`w-[14px] h-[14px] ml-auto ${style.pin}`}
+                />
             )}
         </button>
     )

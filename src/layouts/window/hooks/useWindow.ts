@@ -1,14 +1,13 @@
 import {
-    TouchEventHandler,
     useEffect,
     useReducer,
     useRef,
     useState
 } from 'react'
-import type { MouseEventHandler, Reducer } from 'react'
+import type { Reducer } from 'react'
 
 const minSize: [number, number] = [360, 240]
-const initSize: [number, number] = [720, 480]
+const initSize: [number, number] = [720, 520]
 
 export enum Resize {
     none,

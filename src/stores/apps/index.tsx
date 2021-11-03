@@ -77,3 +77,15 @@ export const appAtom = atom<ActiveApps, ActiveAppActions>(
 )
 
 export const useApps = () => useAtom(appAtom)
+
+export const launchAppAtom = atom<null, App>(null, (_, set, app) => {
+    set(appAtom, {
+        type: 'append',
+        app
+    })
+})
+
+export const useAppLauncher = (app: App) => {
+    const launch = useAtom(launchAppAtom)[1]
+    return () => launch(app)
+}

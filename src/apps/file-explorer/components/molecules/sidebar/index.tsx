@@ -2,7 +2,7 @@ import { SidebarGroup, SidebarItem } from '../..'
 
 const Sidebar = () => {
     return (
-        <aside className="flex flex-col w-[180px] text-gray-800 p-0.5 gap-2 h-full border-r overflow-auto">
+        <aside className="flex flex-col min-w-[180px] text-gray-800 p-0.5 gap-2 h-full border-r overflow-auto">
             <SidebarGroup
                 title="Quick Access"
                 icon="/system-icons/Quick Access.png"
@@ -31,8 +31,8 @@ const Sidebar = () => {
                 icon="/system-icons/Computer.png"
                 items={[
                     <>
-                        <SidebarItem title="C:" icon="/system-icons/Drives/Hardrive Windows.png" />
-                        <SidebarItem title="D:" icon="/system-icons/Drives/Hardrive.png" />
+                        <SidebarItem title="Local Disk (C:)" icon="/system-icons/Drives/Hardrive Windows.png" />
+                        <SidebarItem title="Local Disk (D:)" icon="/system-icons/Drives/Hardrive.png" />
                     </>
                 ]}
             />

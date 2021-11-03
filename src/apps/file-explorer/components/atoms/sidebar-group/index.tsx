@@ -1,11 +1,11 @@
-import { useEffect, useReducer } from 'react'
+import { useReducer } from 'react'
 
 import { SidebarItem } from '..'
 
 import type { SideBarGroupComponent } from './types'
 
 const SidebarGroup: SideBarGroupComponent = ({ title, items, icon }) => {
-    const [isOpen, toggle] = useReducer((v) => !v, false)
+    const [isOpen, toggle] = useReducer((v) => !v, true)
 
     return (
         <section className="flex flex-col gap-1">

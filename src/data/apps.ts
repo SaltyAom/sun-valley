@@ -4,7 +4,7 @@ import type { LazyExoticComponent } from "react"
 export interface App {
     name: string
     icon: string
-    short: string
+    short?: string
     app?: LazyExoticComponent<any>
     className?: string
 }
