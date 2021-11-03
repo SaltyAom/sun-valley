@@ -52,7 +52,7 @@ const ContextBalloon: ContextBalloonComponent = ({
         <motion.aside
             ref={menu}
             id={`context-${index}`}
-            className={`absolute flex flex-col gap-0.5 justify-center max-w-[290px] border border-gray-200 rounded-lg vibrance overflow-hidden ${styles.balloon} ${className}`}
+            className={`absolute z-[100] flex flex-col gap-0.5 justify-center max-w-[290px] border border-gray-200 rounded-lg vibrance overflow-hidden ${styles.balloon} ${className}`}
             style={{
                 ...position,
                 left,

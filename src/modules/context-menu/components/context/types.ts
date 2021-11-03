@@ -2,7 +2,7 @@ import type { FunctionComponent, ButtonHTMLAttributes } from 'react'
 
 export interface ContextProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'title'> {
     icon?: JSX.Element | string
-    title: JSX.Element | string
+    title: string
     suffix?: JSX.Element | string
     menu?: JSX.Element[][]
     dense?: boolean

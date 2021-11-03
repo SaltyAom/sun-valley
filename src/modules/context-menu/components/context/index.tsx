@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { DOMAttributes, useEffect, useRef } from 'react'
 
 import { useContextMenu } from '@stores/context-menu'
 
@@ -10,7 +10,14 @@ import styles from '@modules/context-menu/context.module.sass'
 
 export const height = 32
 
-const Context: ContextComponent = ({ icon, title, suffix, menu, ...props }) => {
+const Context: ContextComponent = ({
+    icon,
+    title,
+    suffix,
+    menu,
+    onClick,
+    ...props
+}) => {
     const [context, dispatch] = useContextMenu()
 
     const button = useRef<HTMLButtonElement>(null)
@@ -47,11 +54,23 @@ const Context: ContextComponent = ({ icon, title, suffix, menu, ...props }) => {
         })
     }
 
+    const handleClick: DOMAttributes<HTMLButtonElement>['onClick'] = (
+        event
+    ) => {
+        if(!menu)
+            dispatch({
+                type: 'clear'
+            })
+
+        if (onClick) onClick(event)
+    }
+
     return (
         <button
             ref={button}
             className={`flex flex-row justify-between gap-16 w-auto items-center min-h-[32px] mx-1 px-3 py-1 rounded-lg ${styles.context}`}
             {...props}
+            onClick={handleClick}
             onMouseOver={showContext}
         >
             <header className="flex flex-row flex-1 items-center text-sm text-left text-gray-800">

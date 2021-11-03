@@ -14,22 +14,30 @@ const ContextMenu = () => {
     }
 
     return (
-        <AnimatePresence>
-            {contextMenus.length && (
-                <section
-                    className="fixed z-[100] w-full h-screen"
-                    onClick={dismissContextMenu}
-                >
-                    {contextMenus.map(({ created, ...props }, index) => (
-                        <ContextBalloon
-                            key={`${index}-${created}`}
-                            index={index}
-                            {...props}
-                        />
-                    ))}
-                </section>
-            )}
-        </AnimatePresence>
+        <>
+            <AnimatePresence>
+                {contextMenus.length && (
+                    <section
+                        className="fixed z-[90] w-full h-screen"
+                        onClick={dismissContextMenu}
+                        onTouchEnd={dismissContextMenu}
+                    />
+                )}
+            </AnimatePresence>
+            <AnimatePresence>
+                {contextMenus.length && (
+                    <>
+                        {contextMenus.map(({ created, ...props }, index) => (
+                            <ContextBalloon
+                                key={`${index}-${created}`}
+                                index={index}
+                                {...props}
+                            />
+                        ))}
+                    </>
+                )}
+            </AnimatePresence>
+        </>
     )
 }
 
